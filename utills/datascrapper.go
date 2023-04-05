@@ -1,4 +1,4 @@
-package scrappers
+package utills
 
 import (
 	"encoding/json"

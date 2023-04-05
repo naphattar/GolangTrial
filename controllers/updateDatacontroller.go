@@ -9,7 +9,7 @@ import (
 	"github.com/naphattar/KaihorBackend/configs"
 	"github.com/naphattar/KaihorBackend/models"
 	"github.com/naphattar/KaihorBackend/responses"
-	scrappers "github.com/naphattar/KaihorBackend/utills"
+	"github.com/naphattar/KaihorBackend/utills"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -17,7 +17,7 @@ import (
 var campCollection *mongo.Collection = configs.GetCollection(configs.DB, "camps")
 
 func UpdateCampDataFromSpreadSheet(c *fiber.Ctx) error {
-	campsData := scrappers.GetDatafromSheet()
+	campsData := utills.GetDatafromSheet()
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 

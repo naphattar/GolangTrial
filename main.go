@@ -22,6 +22,7 @@ func main() {
 	// for CRUD campData from Database
 	app.Get("/camp", controllers.GetAllCampData)
 	app.Get("/camp/:id", controllers.GetCampDatabyID)
+	app.Get("/camp/location/:location", controllers.GetCampDatabyLocation)
 
 	err := app.Listen(":4000")
 	if err != nil {
