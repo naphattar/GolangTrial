@@ -21,11 +21,12 @@ func main() {
 
 	// for CRUD campData from Database
 	app.Get("/camp", controllers.GetAllCampData)
-	app.Get("/camp/:id", controllers.GetCampDatabyID)
+	app.Get("/camp/id/:id", controllers.GetCampDatabyID)
 	app.Get("/camp/location/:location", controllers.GetCampDatabyLocation)
 	app.Get("/camp/keyword/:keyword", controllers.GetCampDatabyKeyword)
 	app.Get("/camp/year/:year", controllers.GetCampDatabyYear)
-	err := app.Listen(":4000")
+
+	err := app.Listen(configs.EnvPORT())
 	if err != nil {
 		panic(err)
 	}
