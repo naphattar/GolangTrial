@@ -23,7 +23,8 @@ func main() {
 	app.Get("/camp", controllers.GetAllCampData)
 	app.Get("/camp/:id", controllers.GetCampDatabyID)
 	app.Get("/camp/location/:location", controllers.GetCampDatabyLocation)
-
+	app.Get("/camp/keyword/:keyword", controllers.GetCampDatabyKeyword)
+	app.Get("/camp/year/:year", controllers.GetCampDatabyYear)
 	err := app.Listen(":4000")
 	if err != nil {
 		panic(err)
