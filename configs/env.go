@@ -10,7 +10,7 @@ import (
 func EnvPORT() string {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading Mongourl from .env file")
+		log.Fatal("Error loading PORT from .env file")
 	}
 	return os.Getenv("PORT")
 }
@@ -20,8 +20,7 @@ func EnvSpreadSheetAPI() string {
 	if err != nil {
 		log.Fatal("Error loading Spreadsheetapiurl from .env file")
 	}
-	spreadSheetapi := os.Getenv("SPREADSHEETAPI")
-	return spreadSheetapi
+	return os.Getenv("SPREADSHEETAPI")
 }
 
 func EnvMongoURI() string {
