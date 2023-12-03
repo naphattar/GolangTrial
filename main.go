@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/naphattar/KaihorBackend/configs"
 	"github.com/naphattar/KaihorBackend/controllers"
 )
@@ -9,6 +10,19 @@ import (
 func main() {
 	app := fiber.New()
 
+	// Default config
+	app.Use(cors.New())
+
+	// Or extend your config for customization
+	app.Use(cors.New(cors.Config{
+		Next:             nil,
+		AllowOrigins:     "*",
+		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH",
+		AllowHeaders:     "",
+		AllowCredentials: false,
+		ExposeHeaders:    "",
+		MaxAge:           0,
+	}))
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Server is runnning")
 	})
