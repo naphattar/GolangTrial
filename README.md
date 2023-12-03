@@ -1,6 +1,6 @@
-﻿# KaihorBackend
 
-### My First Time using golang ^ _ ^
+
+# My First Time using golang ^ _ ^
 ### Installation need
 - golang v 1.16++
 
